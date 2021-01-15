@@ -1,8 +1,8 @@
-To call any method introduce the basic link for localhost http://localhost:8080
-This should be followed by the object name we want to work with(albums, artists etc.)
+To call any method introduce the basic link for localhost http://localhost:8080.
+This should be followed by the object name we want to work with(albums, artists etc.).
 
-For get all method, add after the localhost link /tabelName(localhost http://localhost:8080/recordLabels)
-To get a specific entry, add afther the link above "/id"
+For get all method, add after the localhost link /tabelName(localhost http://localhost:8080/recordLabels).
+To get a specific entry, add afther the link above "/id".
 
 To post a new entry, add a body containing the necessary fields of the table, excluding the id.
 Example for introducing a new song:
@@ -17,4 +17,5 @@ Updating a new method has the same syntax as the post method, but we need to add
 To delete an entry, add the id after the path, like we do in the get method.
 
 The service methods have specific checks to ensure that the introduced data is valid(for example if you want to post a new song, it is validated if the albumId is valid,
-since we can't add a song into an album that doesn't exist).
+since we can't add a song into an album that doesn't exist, or check if the id provided for the update/delete methods is found in the database). If the data is not valid,
+custom error messages are shown in the console.
